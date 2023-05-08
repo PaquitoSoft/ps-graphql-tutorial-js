@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "build": "nx run-many -t build",
-    "dev": "nx run-many -t serve"
+    "dev": "nx run-many -t serve",
+    "dev:backend": "nx run backend:serve",
+    "dev:frontend": "nx run frontend:serve"
   },
   "private": true,
   "devDependencies": {

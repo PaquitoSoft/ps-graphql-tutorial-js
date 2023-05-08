@@ -15,7 +15,13 @@
         "bundle": false,
         "main": "apps/backend/src/main.js",
         "tsConfig": "apps/backend/tsconfig.app.json",
-        "assets": [],
+        "assets": [
+          {
+            "input": "./apps/backend/src",
+            "glob": "**/*.graphql",
+            "output": "./apps/backend/src"
+          }
+        ],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
