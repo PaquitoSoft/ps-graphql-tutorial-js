@@ -32,6 +32,7 @@
     "@types/react-router-dom": "5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
+    "autoprefixer": "10.4.13",
     "babel-jest": "^29.4.1",
     "cypress": "^12.11.0",
     "esbuild": "^0.17.17",
@@ -46,6 +47,7 @@
     "jest-environment-jsdom": "^29.4.1",
     "jest-environment-node": "^29.4.1",
     "nx": "16.0.3",
+    "postcss": "8.4.21",
     "prettier": "^2.6.2",
     "react-refresh": "^0.10.0",
     "react-test-renderer": "18.2.0",
@@ -54,19 +56,26 @@
     "url-loader": "^4.1.1"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.14",
     "@apollo/datasource-rest": "^6.0.0",
     "@graphql-tools/load-files": "^6.6.1",
     "@graphql-tools/merge": "^8.4.1",
+    "@headlessui/react": "^1.7.14",
+    "@heroicons/react": "^2.0.18",
     "@swc/helpers": "~0.5.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "axios": "^1.0.0",
+    "classnames": "^2.3.2",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "graphql-yoga": "^3.9.1",
     "mongoose": "^7.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-props": "^0.0.3",
     "react-router-dom": "6.8.1",
     "tailwindcss": "^3.3.2",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "uuid": "^9.0.0"
   }
 }
