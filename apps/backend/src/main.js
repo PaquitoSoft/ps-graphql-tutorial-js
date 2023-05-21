@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { readFileSync } from 'node:fs';
 import { createServer } from 'node:http';
+// import fetch from 'node-fetch';
 
 import { createYoga, createSchema } from 'graphql-yoga';
 import { connectToDatabase } from './db/connection-manager';
@@ -15,11 +16,12 @@ async function bootstrap() {
 
   // 2. Create GraphQL server instance
   const yoga = createYoga({
+    // maskedErrors: false,
     schema: createSchema({
       typeDefs: typeDefs,
       resolvers: {
         Query: {
-          hello: (parent, params, context, info) => {
+          hello: async (parent, params, context, info) => {
             return `Hello ${params.name}!`;
           }
         }

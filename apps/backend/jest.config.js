@@ -8,4 +8,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/apps/backend',
+  setupFilesAfterEnv: ['./src/setup-tests.js'],
 };

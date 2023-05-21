@@ -6,11 +6,15 @@
     "build": "nx run-many -t build",
     "dev": "nx run-many -t serve",
     "dev:backend": "nx run backend:serve",
-    "dev:frontend": "nx run frontend:serve"
+    "dev:frontend": "nx run frontend:serve",
+    "test": "nx run-many -t test",
+    "test:backend": "nx run backend:test",
+    "test:backend:watch": "nx run backend:test --watch=true"
   },
   "private": true,
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
+    "@graphql-tools/executor-http": "^1.0.0",
     "@nx/cypress": "16.0.3",
     "@nx/esbuild": "16.0.3",
     "@nx/eslint-plugin": "16.0.3",
@@ -46,6 +50,8 @@
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
     "jest-environment-node": "^29.4.1",
+    "msw": "^1.2.1",
+    "node-fetch": "^2.6.11",
     "nx": "16.0.3",
     "postcss": "8.4.21",
     "prettier": "^2.6.2",

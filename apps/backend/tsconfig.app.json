@@ -12,5 +12,5 @@
     "src/**/*.spec.js",
     "src/**/*.test.js"
   ],
-  "include": ["src/**/*.ts", "src/**/*.js"]
+  "include": ["src/**/*.ts", "src/**/*.js", "src/main.js"]
 }
