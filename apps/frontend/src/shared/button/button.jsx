@@ -15,11 +15,14 @@ function Button({
       onClick={onClick}
       className={
         cx(
-          'mt-10 flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2',
-          { 'cursor-not-allowed bg-gray-500 hover:bg-gray-600 focus:ring-0': isDisabled },
-          { 'w-32': size === 's' },
-          { 'w-64': size === 'm' },
-          { 'w-full': size === 'l' },
+          cx(
+            'mt-10 flex items-center justify-center rounded-md border border-transparent  px-8 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2',
+            { 'bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500': !isDisabled },
+            { 'cursor-not-allowed bg-gray-500 hover:bg-gray-600 focus:ring-0': isDisabled },
+            { 'w-32': size === 's' },
+            { 'w-64': size === 'm' },
+            { 'w-full': size === 'l' },
+          )
         )
       }
     >
