@@ -1,3 +1,22 @@
+type Product {
+  id: Int!
+  title: String!
+  price: String!
+  description: String!
+  image: String!
+}
+
+type Category {
+  code: String!
+  products: [Product!]!
+}
+
 type Query {
   hello(name: String!): String!
+
+  categories: [Category!]!
+
+  category(categoryCode: String!): Category!
+
+  product(productId: Int!): Product!
 }
