@@ -11,12 +11,41 @@ type Category {
   products: [Product!]!
 }
 
+type ShopCartItemProduct {
+  id: Int!
+  title: String!
+  price: Int!
+  image: String!
+}
+
+type ShopCartItem {
+  product: ShopCartItemProduct!
+  quantity: Int!
+}
+
+type ShopCart {
+  id: String!
+  userId: String!
+  items: [ShopCartItem!]!
+  totalUnits: Int!
+  totalAmount: Int!
+}
+
+
 type Query {
-  hello(name: String!): String!
-
   categories: [Category!]!
+  category(categoryCode: String): Category!
+  product(productId: Int!): Product
+  cart: ShopCart @authRequired
+}
 
-  category(categoryCode: String!): Category!
+input NewShopCartItem {
+  productId: Int!
+  quantity: Int!
+}
 
-  product(productId: Int!): Product!
+type Mutation {
+  addProductToCart(cartItem: NewShopCartItem): ShopCart @authRequired
+  removeProductFromCart(productId: Int!): ShopCart @authRequired
+  checkout: String! @authRequired
 }
