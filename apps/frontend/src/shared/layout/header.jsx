@@ -66,8 +66,8 @@ function Header(props) {
                     <span
                       className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-gray absolute top-6 right-0"
                     >
-                        {props.cartItemsCount}
-                      </span>
+                      {props.cartItemsCount}
+                    </span>
                   }
                 </Link>
               </div>
@@ -79,9 +79,11 @@ function Header(props) {
   );
 }
 Header.propTypes = {
-  categories: PropTypes.arrayOf({
-    code: PropTypes.string.isRequired
-  }).isRequired,
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      code: PropTypes.string.isRequired
+    })
+  ).isRequired,
   cartItemsCount: PropTypes.number
 };
 

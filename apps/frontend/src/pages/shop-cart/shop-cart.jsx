@@ -2,13 +2,15 @@ import Button from "../../shared/button/button";
 import Layout from "../../shared/layout/layout";
 import Loading from "../../shared/loading/loading";
 import CartItem from "./cart-item";
+import useShopCart from './use-shop-cart';
 
 function ShopCartPage() {
-  // TODO: To be implemented
-  const shopCart = { items: [] };
-  const onRemoveCartItem = () => false;
-  const onCheckout = ()  => false;
-  const isCheckingOut = false;
+  const {
+    shopCart,
+    onRemoveCartItem,
+    onCheckout,
+    isCheckingOut
+  } = useShopCart();
 
   if (!shopCart) {
     return (

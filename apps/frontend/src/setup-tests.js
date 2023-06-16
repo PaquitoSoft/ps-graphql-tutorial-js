@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable no-undef */
-import { client } from './apollo-client';
+import client from './apollo-client';
 import { server } from './mocks/server';
 
 // Establish API mocking before all tests.

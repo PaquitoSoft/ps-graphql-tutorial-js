@@ -1,16 +1,40 @@
 import { useParams } from "react-router-dom";
+import { useQuery, gql } from '@apollo/client';
+
 import Layout from "../../shared/layout/layout";
+import Loading from "../../shared/loading/loading";
 
 import ProductCard from "./product-card";
+
+const categoryDetailQuery = gql`
+  query CategoryDetailQuery($categoryCode: String!) {
+    category(categoryCode: $categoryCode) {
+      code
+      products {
+        id
+        title
+        price
+        image
+      }
+    }
+  }
+`;
 
 function CategoryPage() {
   const { categoryCode } = useParams();
 
-  // TODO: To be implemented
-  const data = {
-    category: {
-      products: []
+  const { data, loading } = useQuery(categoryDetailQuery, {
+    variables: {
+      categoryCode: categoryCode
     }
+  });
+
+  if (loading) {
+    return (
+      <Layout pageTitle="">
+        <Loading />
+      </Layout>
+    );
   }
 
   return (

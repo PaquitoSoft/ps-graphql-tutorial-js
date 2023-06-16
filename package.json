@@ -9,7 +9,9 @@
     "dev:frontend": "nx run frontend:serve",
     "test": "nx run-many -t test",
     "test:backend": "nx run backend:test",
-    "test:backend:watch": "nx run backend:test --watch=true"
+    "test:backend:watch": "nx run backend:test --watch=true",
+    "test:frontend": "nx run frontend:test",
+    "test:frontend:watch": "nx run frontend:test --watch=true"
   },
   "private": true,
   "devDependencies": {

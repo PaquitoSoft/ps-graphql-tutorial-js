@@ -1,16 +1,27 @@
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import Layout from "../../shared/layout/layout";
 import Loading from "../../shared/loading/loading";
 import Button from "../../shared/button/button";
+import useProduct from './use-product';
 
 function ProductPage() {
-  // const { productId } = useParams();
+  const { productId } = useParams();
 
-  // TODO: To be implemented
-  const product = {};
-  const onAddToCart = () => false;
-  const isAddingProductToCart = false;
+  const {
+    product,
+    onAddToCart,
+    isAddingProductToCart
+  } = useProduct(parseInt(productId, 10));
+
+  if (!product) {
+    return (
+      <Layout pageTitle="">
+        <Loading />
+      </Layout>
+    );
+  }
+
 
   if (!product) {
     return (

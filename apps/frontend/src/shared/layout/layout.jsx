@@ -1,15 +1,21 @@
 import PropTypes from 'prop-types';
+import { useQuery, gql } from '@apollo/client';
 
 import Header from "./header";
 
-function Layout(props) {
-  // TODO: Fetch real data
-  const data = {
-    categories: [],
-    cart: {
-      totalUnits: 0
+const layoutDataQuery = gql`
+  query LayoutDataQuery {
+    categories {
+      code
     }
-  };
+    cart {
+      totalUnits
+    }
+  }
+`;
+
+function Layout(props) {
+  const { data } = useQuery(layoutDataQuery);
 
   return (
     <>
